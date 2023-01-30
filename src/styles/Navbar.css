@@ -1,9 +1,10 @@
 .navbar--container {
     display: flex;
     align-items: center;
-    padding: 20px 37px 20px 20px;
+    padding: 0 37px 0 20px;
     background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
-    color: #FFFFFF
+    color: #FFFFFF;
+    height: 65px;
 }
 
 .navbar--name,
