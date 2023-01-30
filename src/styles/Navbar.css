@@ -22,13 +22,13 @@
 .navbar--name {
     margin-right: auto;
     font-family: 'Karla', sans-serif;
-    font-size: 20.7482px;
+    font-size: 1.25rem;
     line-height: 24px;
     letter-spacing: -0.1em;
 }
 
 .navbar--title {
     font-weight: 500;;
-    font-size: 12px;
+    font-size: .75rem;
     line-height: 15px;
 }
