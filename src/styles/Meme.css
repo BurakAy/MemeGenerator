@@ -27,8 +27,9 @@
 }
 
 .meme--button {
-    width: 100%;
+    width: 477px;
     height: 40px;
+    padding: 0;
     font-family: 'Karla', sans-serif;
     font-weight: 700;
     font-size: 16px;
