@@ -1,0 +1,31 @@
+.navbar--container {
+    display: flex;
+    align-items: center;
+    padding: 20px 37px 20px 20px;
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    color: #FFFFFF
+}
+
+.navbar--container p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar--logo {
+    width: 31.31px;
+    height: 26.22px;
+    padding-right: 6.69px;
+}
+
+.navbar--name {
+    margin-right: auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 20.7482px;
+    line-height: 24px;
+    letter-spacing: -0.1em;
+}
+
+.navbar--title {
+    font-size: 12px;
+    line-height: 15px;
+}
