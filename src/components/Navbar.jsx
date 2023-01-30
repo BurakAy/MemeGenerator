@@ -5,8 +5,8 @@ const Navbar = () => {
   return (
     <div className="navbar--container">
       <img className="navbar--logo" src={trollLogo} alt="logo" />
-      <p className="navbar--name">MemeGenerator</p>
-      <p className="navbar--title">React Course - Project 3</p>
+      <h2 className="navbar--name">Meme Generator</h2>
+      <h3 className="navbar--title">React Course - Project 3</h3>
     </div>
   );
 };

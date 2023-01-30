@@ -6,7 +6,8 @@
     color: #FFFFFF
 }
 
-.navbar--container p {
+.navbar--name,
+.navbar--container h3 {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -26,6 +27,7 @@
 }
 
 .navbar--title {
+    font-weight: 500;;
     font-size: 12px;
     line-height: 15px;
 }
