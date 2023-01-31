@@ -3,7 +3,7 @@ import memesData from "./memesData";
 import { useState } from "react";
 
 const Meme = () => {
-  const [meme, setMemeImage] = useState({
+  const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
@@ -17,7 +17,7 @@ const Meme = () => {
     const textOne = document.querySelector(".meme--t1").value;
     const textTwo = document.querySelector(".meme--t2").value;
 
-    setMemeImage((memeInfo) => {
+    setMeme((memeInfo) => {
       return {
         ...memeInfo,
         topText: textOne,
