@@ -3,28 +3,70 @@ import memesData from "./memesData";
 import { useState } from "react";
 
 const Meme = () => {
-  const [memeImage, setMemeImage] = useState("");
+  /**
+   * Challenge: Update our state to save the meme-related
+   * data as an object called `meme`. It should have the
+   * following 3 properties:
+   * topText, bottomText, randomImage.
+   *
+   * The 2 text states can default to empty strings for now,
+   * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
+   *
+   * Next, create a new state variable called `allMemeImages`
+   * which will default to `memesData`, which we imported above
+   *
+   * Lastly, update the `getMemeImage` function and the markup
+   * to reflect our newly reformed state object and array in the
+   * correct way.
+   */
+
+  const [meme, setMemeImage] = useState({
+    topText: "",
+    bottomText: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  });
+
+  const [allMemeImages, setAllMemeImages] = useState(memesData);
 
   const getMemeImage = () => {
-    const memes = memesData.data.memes;
+    const memes = allMemeImages.data.memes;
     const randMeme = Math.floor(Math.random() * memes.length);
-    setMemeImage(memes[randMeme].url);
+    const textOne = document.querySelector(".meme--t1").value;
+    const textTwo = document.querySelector(".meme--t2").value;
+
+    setMemeImage((memeInfo) => {
+      return {
+        ...memeInfo,
+        topText: textOne,
+        bottomText: textTwo,
+        randomImage: memes[randMeme].url,
+      };
+    });
   };
+
+  console.log(meme);
 
   return (
     <section className="meme--form_container">
       <div className="meme--form">
         <div className="meme--inputs">
-          <input type="text" placeholder="Shut up" />
-          <input type="text" placeholder="and take my money" />
+          <input className="meme--t1" type="text" placeholder="Shut up" />
+          <input
+            className="meme--t2"
+            type="text"
+            placeholder="and take my money"
+          />
         </div>
         <button className="meme--button" type="submit" onClick={getMemeImage}>
           Get a new meme image 🖼
         </button>
       </div>
-
       <div className="meme--image_container">
-        <img src={memeImage} />
+        <div className="meme--text">
+          <p>{meme.topText}</p>
+          <p>{meme.bottomText}</p>
+        </div>
+        <img src={meme.randomImage} />
       </div>
     </section>
   );
