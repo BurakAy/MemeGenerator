@@ -8,7 +8,6 @@ const Meme = () => {
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-
   const [allMemeImages, setAllMemeImages] = useState(memesData);
 
   const getMemeImage = () => {
@@ -26,8 +25,6 @@ const Meme = () => {
       };
     });
   };
-
-  console.log(meme);
 
   return (
     <section className="meme--form_container">
