@@ -13,15 +13,22 @@ const Meme = () => {
   const getMemeImage = () => {
     const memes = allMemeImages.data.memes;
     const randMeme = Math.floor(Math.random() * memes.length);
-    const textOne = document.querySelector(".meme--t1").value;
-    const textTwo = document.querySelector(".meme--t2").value;
+    const memeImg = memes[randMeme].url;
 
     setMeme((memeInfo) => {
       return {
         ...memeInfo,
-        topText: textOne,
-        bottomText: textTwo,
-        randomImage: memes[randMeme].url,
+        randomImage: memeImg,
+      };
+    });
+  };
+
+  const createMeme = (event) => {
+    const { name, value } = event.target;
+    setMeme((text) => {
+      return {
+        ...text,
+        [name]: value,
       };
     });
   };
@@ -30,10 +37,20 @@ const Meme = () => {
     <section className="meme--form_container">
       <div className="meme--form">
         <div className="meme--inputs">
-          <input className="meme--t1" type="text" placeholder="Shut up" />
+          <input
+            className="meme--t1"
+            type="text"
+            name="topText"
+            value={meme.topText}
+            onChange={createMeme}
+            placeholder="Shut up"
+          />
           <input
             className="meme--t2"
             type="text"
+            name="bottomText"
+            value={meme.bottomText}
+            onChange={createMeme}
             placeholder="and take my money"
           />
         </div>
