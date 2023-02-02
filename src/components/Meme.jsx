@@ -1,6 +1,5 @@
 import "../styles/Meme.css";
-import memesData from "./memesData";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Meme = () => {
   const [meme, setMeme] = useState({
@@ -8,12 +7,17 @@ const Meme = () => {
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
-  const [allMemeImages, setAllMemeImages] = useState(memesData);
+  const [allMemes, setAllMemes] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((resp) => resp.json())
+      .then((data) => setAllMemes(data.data.memes));
+  }, []);
 
   const getMemeImage = () => {
-    const memes = allMemeImages.data.memes;
-    const randMeme = Math.floor(Math.random() * memes.length);
-    const memeImg = memes[randMeme].url;
+    const randMeme = Math.floor(Math.random() * allMemes.length);
+    const memeImg = allMemes[randMeme].url;
 
     setMeme((memeInfo) => {
       return {
@@ -55,7 +59,7 @@ const Meme = () => {
           />
         </div>
         <button className="meme--button" type="submit" onClick={getMemeImage}>
-          Get a new meme image 🖼
+          Get a new meme image
         </button>
       </div>
       <div className="meme--image_container">
