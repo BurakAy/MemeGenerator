@@ -4,7 +4,7 @@
 https://euphonious-pastelito-187b57.netlify.app/
 
 ## About
-Meme Generator gets a random meme image from the Imgflip API and allows you to overlay text onto the iamge.
+Meme Generator gets a random meme image from the Imgflip API and allows you to overlay text onto the image.
 
 ## Tech
 Build tool: [Vite](https://vitejs.dev/)
